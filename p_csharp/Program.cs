@@ -33,4 +33,4 @@
 //}
 
 using p_csharp;
-Calculadora.Run();
+Ex_While.Run();
