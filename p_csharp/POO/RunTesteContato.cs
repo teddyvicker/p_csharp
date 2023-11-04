@@ -39,16 +39,38 @@ namespace p_csharp.POO
         public static void ExecutarAgenda()
         {
             Agenda agenda = new Agenda();
-            ConsoleKeyInfo GetKey(string pergunta)
+
+            int GetOpt(string pergunta)
             {
                 Console.WriteLine(pergunta);
-                return Console.ReadKey();
+                return int.Parse(Console.ReadLine());
             }
-            while(GetKey("Adicionar contato ou ESC para Sair").Key != ConsoleKey.Escape)
+            StringBuilder options = new StringBuilder();
+            options.AppendLine("1 - Adcionar Contato ");
+            options.AppendLine("2 - Listar Contato ");
+            options.AppendLine("3 - Remover Contato ");
+            options.AppendLine("4 - Sair ");
+            options.AppendLine("Escolha uma das Opções");
+
+            int opt = 0;
+            while ((opt = GetOpt(options.ToString())) != 0)
             {
-                agenda.AdicionarContato();
+                switch (opt)
+                {
+                    case 1:
+                        agenda.AdicionarContato();
+                        break;
+                    case 2:
+                        agenda.ListarContatos();
+                        break;
+                    case 3:
+                        agenda.RemoverContato();
+                        break;
+                    default:
+                        Console.WriteLine("Opção Inválida!");
+                        break;
+                }
             }
-            agenda.ListarContatos();
         }
     }
 }
