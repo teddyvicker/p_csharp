@@ -33,4 +33,4 @@
 //}
 
 using p_csharp;
-Ex_Lista.Run();
+Ex_Funcao.Run();
