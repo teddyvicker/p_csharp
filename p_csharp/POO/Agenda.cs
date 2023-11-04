@@ -52,18 +52,29 @@ namespace p_csharp.POO
         {
             // Exiba uma lista com os contatos cadastrados e pergunte o indice 
             // do contato que deve ser resolvido
-            Console.WriteLine();
-            foreach (var cont in this.Contatos)
+          this.ListarContatos();
+            Console.WriteLine("informe qual contato quer remover:");
+            int indiceContato = int.Parse(Console.ReadLine() );
+            if (indiceContato -1 < 0)
             {
-                Console.WriteLine($"{this.Contatos.IndexOf(cont) + 1} - Nome: {cont.Nome}, - Email: {cont.Email}, - Numero: {cont.Numero}");
+                Console.WriteLine("Contato removido com sucesso!");
+                return;
             }
+            if(indiceContato -1 >= this.Contatos.Count)
+            {
+                Console.WriteLine("Contato Invalido");
+                return;
+            }
+            Contatos contatoSelecionado = this.Contatos[indiceContato -1];
+            this.Contatos.Remove(contatoSelecionado);
+
             // foreach (contato c; contatos) {{lista de contatos}}
             // pergunta o indice do contato
 
             //metodo para remoção em Lista
             // this.Contatos.Remove(Contatos[0]);
 
-            throw new NotImplementedException();
+          
         }
 
     }
