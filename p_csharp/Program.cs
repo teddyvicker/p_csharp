@@ -33,4 +33,6 @@
 //}
 
 using p_csharp;
-Ex_Funcao.Run();
+using p_csharp.POO;
+
+RunTesteContato.ExecutarAgenda();
