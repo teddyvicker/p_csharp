@@ -35,4 +35,4 @@
 using p_csharp;
 using p_csharp.POO;
 
-RunTesteContato.ExecutarAgenda();
+TesteQuestao9.Run();
